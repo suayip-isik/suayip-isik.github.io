@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kullanıcı İşletim Sistemi Tespiti</title>
+  <script>
+    // Kullanıcının işletim sistemini tespit eden fonksiyon
+    function detectOperatingSystem() {
+      var userAgent = window.navigator.userAgent.toLowerCase();
+
+      if (userAgent.indexOf("win") !== -1) {
+        return "Windows";
+      } else if (userAgent.indexOf("mac") !== -1) {
+        return "macOS";
+      } else if (userAgent.indexOf("linux") !== -1) {
+        return "Linux";
+      } else if (userAgent.indexOf("android") !== -1) {
+        return "Android";
+      } else if (userAgent.indexOf("ios") !== -1 || userAgent.indexOf("iphone") !== -1 || userAgent.indexOf("ipad") !== -1) {
+        return "iOS";
+      } else {
+        return "Bilinmeyen";
+      }
+    }
+
+    // Kullanıcının işletim sistemini ekrana yazdıran fonksiyon
+    function displayOperatingSystem() {
+      var os = detectOperatingSystem();
+      document.getElementById("result").innerHTML = "Kullanıcı İşletim Sistemi: " + os;
+    }
+  </script>
+</head>
+<body onload="displayOperatingSystem();">
+  <h1>Kullanıcı İşletim Sistemi Tespiti</h1>
+  <p id="result"></p>
+</body>
+</html>
