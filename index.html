@@ -6,7 +6,7 @@
     // Kullanıcının işletim sistemini tespit eden fonksiyon
     function detectOperatingSystem() {
       var platform = window.navigator.platform;
-      console.log(platform);
+      alert(platform);
       if (/Win/.test(platform)) {
         return "Windows";
       } else if (/Mac/.test(platform)) {
@@ -30,7 +30,7 @@
   </script>
 </head>
 <body onload="displayOperatingSystem();">
-  <h1>Deneme 3</h1>
+  <h1>Deneme 5</h1>
   <h1>Kullanıcı İşletim Sistemi Tespiti</h1>
   <p id="result"></p>
 </body>
