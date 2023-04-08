@@ -5,7 +5,7 @@
   <script>
     // Kullanıcının işletim sistemini tespit eden fonksiyon
     function detectOperatingSystem() {
-      var platform = window.navigator.platform;
+      var platform = window.navigator;
       alert(platform);
       if (/Win/.test(platform)) {
         return "Windows";
