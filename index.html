@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Kullanıcı İşletim Sistemi Tespiti</title>
   <script>
     // Kullanıcının işletim sistemini tespit eden fonksiyon
+    // Kullanıcının işletim sistemi tespiti
     function detectOperatingSystem() {
-      var platform = window.navigator.platform;
-      console.log(window.navigator);
-      alert(platform);
-      if (/Win/.test(platform)) {
+      var platform = window.navigator.platform.toLowerCase();
+      if (/win/i.test(platform)) {
         return "Windows";
-      } else if (/Mac/.test(platform)) {
+      } else if (/mac/i.test(platform)) {
         return "macOS";
-      } else if (/Linux/.test(platform)) {
+      } else if (/linux/i.test(platform)) {
         return "Linux";
-      } else if (/Android/.test(platform)) {
+      } else if (/android/i.test(platform)) {
         return "Android";
-      } else if (/iPhone|iPad|iPod/.test(platform)) {
+      } else if (/iphone|ipad|ipod/i.test(platform)) {
         return "iOS";
       } else {
         return "Bilinmeyen";
       }
     }
 
-    // Kullanıcının işletim sistemini ekrana yazdıran fonksiyon
-    function displayOperatingSystem() {
+    // Kullanıcının işletim sistemini kontrol ederek yönlendirme yapma
+    function redirectToApple() {
       var os = detectOperatingSystem();
-      document.getElementById("result").innerHTML = "Kullanıcı İşletim Sistemi: " + os;
+      if (os === "macOS" || os === "iOS") {
+        window.location.href = "https://www.apple.com.tr";
+      }
     }
+
+    redirectToApple();
+
   </script>
 </head>
-<body onload="displayOperatingSystem();">
+
+<body onload="detectOperatingSystem();">
   <h1>7</h1>
   <h1>Kullanıcı İşletim Sistemi Tespiti</h1>
   <p id="result"></p>
 </body>
+
 </html>
