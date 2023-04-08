@@ -5,17 +5,16 @@
   <script>
     // Kullanıcının işletim sistemini tespit eden fonksiyon
     function detectOperatingSystem() {
-      var userAgent = window.navigator.userAgent.toLowerCase();
-
-      if (userAgent.indexOf("win") !== -1) {
+      var platform = window.navigator.platform;
+      if (/Win/.test(platform)) {
         return "Windows";
-      } else if (userAgent.indexOf("mac") !== -1) {
+      } else if (/Mac/.test(platform)) {
         return "macOS";
-      } else if (userAgent.indexOf("linux") !== -1) {
+      } else if (/Linux/.test(platform)) {
         return "Linux";
-      } else if (userAgent.indexOf("android") !== -1) {
+      } else if (/Android/.test(platform)) {
         return "Android";
-      } else if (userAgent.indexOf("ios") !== -1 || userAgent.indexOf("iphone") !== -1 || userAgent.indexOf("ipad") !== -1) {
+      } else if (/iPhone|iPad|iPod/.test(platform)) {
         return "iOS";
       } else {
         return "Bilinmeyen";
